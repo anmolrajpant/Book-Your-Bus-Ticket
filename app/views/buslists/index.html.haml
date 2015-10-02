@@ -1,0 +1,50 @@
+%p#notice= notice
+%h1 Listing Buslists
+#tabs
+  %ul.nav.nav-tabs
+    %li.active
+      %a#tab1{:href => "#table1"} Aaja
+    %li
+      %a#tab2{:href => "#table2"} voli
+  #table1
+    %table.table.table-bordered.table-hover
+      %thead
+        %tr
+          %th Start Point
+          %th End Point
+          %th Time
+          %th Vehicle No.
+          %th Fare
+          %th{:colspan => "3"}
+      %tbody
+        - @buslists.each do |buslist|
+          %tr
+            %td= buslist.starting
+            %td= buslist.ending
+            %td= buslist.time
+            %td= buslist.busNo
+            %td= buslist.price
+            %td
+              .btn.btn-default= link_to 'Book it'
+  #table2
+    %table.table.table-bordered.table-hover
+      %thead
+        %tr
+          %th Start Point
+          %th End Point
+          %th Time
+          %th Vehicle No.
+          %th Fare
+          %th{:colspan => "3"}
+      %tbody
+        - @buslists.each do |buslist|
+          %tr
+            %td= buslist.starting
+            %td= buslist.ending
+            %td= buslist.time
+            %td= buslist.busNo
+            %td= buslist.price
+            %td
+              .btn.btn-default= link_to 'Book it'
+  %br/
+  = link_to 'New Buslist', new_buslist_path

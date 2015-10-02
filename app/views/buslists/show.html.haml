@@ -1,0 +1,19 @@
+%p#notice= notice
+%p
+  %strong Starting:
+  = @buslist.starting
+%p
+  %strong Ending:
+  = @buslist.ending
+%p
+  %strong Time:
+  = @buslist.time
+%p
+  %strong Busno:
+  = @buslist.busNo
+%p
+  %strong Price:
+  = @buslist.price
+= link_to 'Edit', edit_buslist_path(@buslist)
+|
+= link_to 'Back', buslists_path
