@@ -1,0 +1,65 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Listing Buslists</h1>
+<ul class="nav nav-tabs">
+  <li class="active"><a href="#table1" id="tab1">Aaja</a></li>
+  <li><a href="#table2" id="tab2">voli</a></li>
+ 
+</ul>
+<div id="table1">
+<table class="table table-bordered table-hover">
+  <thead>
+    <tr>
+      <th>Start Point</th>
+      <th>End Point</th>
+      <th>Time</th>
+      <th>Vehicle No.</th>
+      <th>Fare</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @buslists.each do |buslist| %>
+      <tr>
+        <td><%= buslist.starting %></td>
+        <td><%= buslist.ending %></td>
+        <td><%= buslist.time %></td>
+        <td><%= buslist.busNo %></td>
+        <td><%= buslist.price %></td>
+        <td><div class="btn btn-default"><%= link_to 'Book it' %></div></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+</div>
+<div id="table2">
+<table class="table table-bordered table-hover">
+  <thead>
+    <tr>
+      <th>Start Point</th>
+      <th>End Point</th>
+      <th>Time</th>
+      <th>Vehicle No.</th>
+      <th>Fare</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @buslists.each do |buslist| %>
+      <tr>
+        <td><%= buslist.starting %></td>
+        <td><%= buslist.ending %></td>
+        <td><%= buslist.time %></td>
+        <td><%= buslist.busNo %></td>
+        <td><%= buslist.price %></td>
+        <td><div class="btn btn-default"><%= link_to 'Book it' %></div></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+</div>
+<br>
+
+<%= link_to 'New Buslist', new_buslist_path %>

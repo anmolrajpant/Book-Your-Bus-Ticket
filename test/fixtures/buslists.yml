@@ -1,0 +1,15 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  starting: MyString
+  ending: MyString
+  time: 2015-10-01 13:04:52
+  busNo: 1
+  price: 1
+
+two:
+  starting: MyString
+  ending: MyString
+  time: 2015-10-01 13:04:52
+  busNo: 1
+  price: 1
