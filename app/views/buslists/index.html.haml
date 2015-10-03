@@ -1,50 +1,33 @@
 %p#notice= notice
-%h1 Listing Buslists
+%h1 Bus List
 #tabs
-  %ul.nav.nav-tabs
-    %li.active
-      %a#tab1{:href => "#table1"} Aaja
-    %li
-      %a#tab2{:href => "#table2"} voli
-  #table1
-    %table.table.table-bordered.table-hover
-      %thead
-        %tr
-          %th Start Point
-          %th End Point
-          %th Time
-          %th Vehicle No.
-          %th Fare
-          %th{:colspan => "3"}
-      %tbody
-        - @buslists.each do |buslist|
-          %tr
-            %td= buslist.starting
-            %td= buslist.ending
-            %td= buslist.time
-            %td= buslist.busNo
-            %td= buslist.price
-            %td
-              .btn.btn-default= link_to 'Book it'
-  #table2
-    %table.table.table-bordered.table-hover
-      %thead
-        %tr
-          %th Start Point
-          %th End Point
-          %th Time
-          %th Vehicle No.
-          %th Fare
-          %th{:colspan => "3"}
-      %tbody
-        - @buslists.each do |buslist|
-          %tr
-            %td= buslist.starting
-            %td= buslist.ending
-            %td= buslist.time
-            %td= buslist.busNo
-            %td= buslist.price
-            %td
-              .btn.btn-default= link_to 'Book it'
-  %br/
-  = link_to 'New Buslist', new_buslist_path
+	%ul#menu.nav.nav-tabs{:role => "tablist"}
+		%li.active{:role => "presentation"}= link_to "Aaja", "#table1", "aria-controls" => "table1", "data-toggle" => "tab", "role" => "tab"
+		%li{:role => "presentation"}= link_to "Voli", "#table2", "aria-controls" => "table2", "data-toggle" => "tab", "role" => "tab"
+		%li{:role => "presentation"}= link_to "Parsi", "#table3", "aria-controls" => "table3", "data-toggle" => "tab", "role" => "tab"
+	.tab-contant
+		#table1.tab-pan.fade.in.active{:role => "tabpanel"}
+			%table.table.table-striped.table-hover
+				%thead
+					%tr
+						%th Start Point
+						%th End Point
+						%th Time
+						%th Bus No
+						%th Fare(Rs.)
+						%th{:colspan => "3"}
+				%tbody
+					- @buslists.each do |buslist|
+						%tr
+							%td= buslist.starting
+							%td= buslist.ending
+							%td= buslist.time
+							%td= buslist.busNo
+							%td= buslist.price
+							%td 
+								.btn.btn-default= link_to 'Book it'
+		#table2.tab-pane{:role => "tabpanel"}
+		This is the page for voli
+		#table3.tab-pane{:role => "tabpanel"}
+		This page will load the content of parsi
+= link_to 'New Bus', new_buslist_path

@@ -17,13 +17,6 @@
 //= require_tree .
 $(document).ready(function()
 {
-    $(".btn").click(function()
-    	{
-        	alert("Booked");
-    	});
+	$(".btn").bind('click',function(e){e.preventDefault();alert('Ticket Booked.');})
+	$('#table1').tab('show');
 });
-
-$('#tab1 a').click(function (e) {
-  e.preventDefault()
-  $(this).tab('table1')
-})
