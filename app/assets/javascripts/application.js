@@ -10,13 +10,15 @@
 // Read Sprockets README (https://github.com/rails/sprockets#sprockets-directives) for details
 // about supported directives.
 //
-//= require bootstrap-sprockets
 //= require jquery
 //= require jquery_ujs
 //= require turbolinks
 //= require_tree .
+//= require bootstrap-sprockets
+
 $(document).ready(function()
 {
-	$(".btn").bind('click',function(e){e.preventDefault();alert('Ticket Booked.');})
-	$('#table1').tab('show');
+	$(".btn").bind('click',function(e){e.preventDefault();alert('Ticket Booked');})
+  $('#table1').tab('show');
 });
+
