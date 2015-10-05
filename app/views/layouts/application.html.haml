@@ -11,4 +11,4 @@
     = yield
     %p.notice= notice
     %p.alert= alert
-
+    = link_to 'sign out', destroy_user_session_path, method: :delete

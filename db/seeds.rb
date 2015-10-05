@@ -5,3 +5,6 @@
 #
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
+Buslist.create(starting: 'Kathmandu', ending: 'Pokhara', time: '10:20', busNo: 4589, price: 250)
+Buslist.create(starting: 'Pokhara', ending: 'Dharan', time: '11:50', busNo: 5000, price: 350)
+Buslist.create(starting: 'Jhapa', ending: 'Biratnagar', time: '12:20', busNo: 9824, price: 150)
