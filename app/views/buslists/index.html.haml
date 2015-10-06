@@ -1,5 +1,8 @@
 %p#notice= notice
 %h1 Bus List
+= form_for :search, url: '/search'  do |f|
+	= f.text_field :search_query
+	= f.submit 'Search'
 #tabs
 	%ul#menu.nav.nav-tabs{:role => "tablist"}
 		%li.active{:role => "presentation"}= link_to "Aaja", "#table1", "aria-controls" => "table1", "data-toggle" => "tab", "role" => "tab"

@@ -1,6 +1,9 @@
 Rails.application.routes.draw do
   devise_for :users
   resources :buslists
+
+  get '/search', :to => 'search#show'
+  post '/search', :to => 'search#show'
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 

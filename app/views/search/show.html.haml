@@ -1,0 +1,22 @@
+- if @results
+	%table.table.table-striped
+	%thead
+		%tr
+			%th Start Point
+			%th End Point
+			%th Time
+			%th Bus No
+			%th Fare(Rs.)
+			%th{:colspan => "3"}
+	%tbody
+		- @results.each do |buslist|
+			%tr
+				%td= buslist.starting
+				%td= buslist.ending
+				%td= buslist.time
+				%td= buslist.busNo
+				%td= buslist.price
+				%td 
+					.btn.btn-default= link_to 'Book it'
+- else
+	%p No Result
